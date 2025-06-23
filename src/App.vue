@@ -40,7 +40,7 @@
       <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden mb-6">
         <Editor
           ref="editorRef"
-          api-key="me7kt8k22e93dued6zda3c3sdwcyukfiy0hi90hkwyn2lm1i"
+          api-key="sua_chave_aqui"
           :init="editorInit"
         />
       </div>
