@@ -1,39 +1,30 @@
-<template>
-  <div class="container">
-    <h1>Editor TinyMCE com Vue 3 + Vite</h1>
-    <Editor
-      v-model="content"
-      :init="{
-        height: 500,
-        menubar: false,
-        plugins: 'link image code table lists',
-        toolbar:
-          'undo redo | formatselect | bold italic | alignleft aligncenter alignright | bullist numlist | link image | code',
-      }"
-    />
-    <h2>Conteúdo:</h2>
-    <div v-html="content" class="output"></div>
-  </div>
-</template>
-
 <script setup>
-import { ref } from 'vue'
-import Editor from '@tinymce/tinymce-vue'
-
-const content = ref('<p>Escreva algo aqui...</p>')
+  import Editor from '@tinymce/tinymce-vue'
 </script>
 
-<style>
-.container {
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 1rem;
-  font-family: Arial, sans-serif;
-}
-.output {
-  border: 1px solid #ccc;
-  padding: 1rem;
-  margin-top: 1rem;
-  background: #f9f9f9;
-}
-</style>
+<template>
+  <main id="sample">
+    <Editor
+      api-key="me7kt8k22e93dued6zda3c3sdwcyukfiy0hi90hkwyn2lm1i"
+      :init="{
+        toolbar_mode: 'sliding',
+        plugins: [
+          // Core editing features
+          'anchor', 'autolink', 'charmap', 'codesample', 'emoticons', 'image', 'link', 'lists', 'media', 'searchreplace', 'table', 'visualblocks', 'wordcount',
+          // Your account includes a free trial of TinyMCE premium features
+          // Try the most popular premium features until Jul 6, 2025:
+          'checklist', 'mediaembed', 'casechange', 'formatpainter', 'pageembed', 'a11ychecker', 'tinymcespellchecker', 'permanentpen', 'powerpaste', 'advtable', 'advcode', 'editimage', 'advtemplate', 'ai', 'mentions', 'tinycomments', 'tableofcontents', 'footnotes', 'mergetags', 'autocorrect', 'typography', 'inlinecss', 'markdown','importword', 'exportword', 'exportpdf'
+        ],
+        toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
+        tinycomments_mode: 'embedded',
+        tinycomments_author: 'Author name',
+        mergetags_list: [
+          { value: 'First.Name', title: 'First Name' },
+          { value: 'Email', title: 'Email' },
+        ],
+        ai_request: (request, respondWith) => respondWith.string(() => Promise.reject('See docs to implement AI Assistant')),
+      }"
+      initial-value="Welcome to TinyMCE!"
+    />
+  </main>
+</template>
