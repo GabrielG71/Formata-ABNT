@@ -15,7 +15,7 @@ Editor web para formatação automática de documentos acadêmicos seguindo norm
 
 **1. Clone e instale**
 ```bash
-git clone https://github.com/usuario/formata-abnt.git
+git clone https://github.com/GabrielG71/Formata-ABNT
 cd formata-abnt
 npm install
 ```
